@@ -1,0 +1,26 @@
+.admin {
+  display: grid;
+  grid-template-columns: 12% auto;
+  text-align: center;
+   @media screen and (max-width:1000px) {
+    grid-template-columns: 100%;
+    width: 100vw;
+   }
+    .navbar {
+      z-index: 1;
+      @media screen and (max-width:600px) {
+        width:25%;
+        z-index: 9999999;
+      }
+    }
+    .content {
+      display: grid;
+      padding: 1rem;
+      margin-left:4%;
+      @media screen and (max-width:600px) {
+        padding: 0;
+        margin-left:0;
+      }
+    }
+  }
+  

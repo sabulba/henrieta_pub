@@ -1,0 +1,19 @@
+.chart {
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    padding: 2rem;
+    max-height: 80vh;
+    @media screen and (max-width: 800px) {
+        height: 100vh;
+    }
+    @media screen and (max-width: 1600px) {
+        height: 78vh;
+    }
+    @media screen and (max-width: 600px) {
+        height: 78vh;
+    }
+    h2{
+        color: #fff;
+    }
+}

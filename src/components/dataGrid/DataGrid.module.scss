@@ -1,0 +1,21 @@
+// .content {
+//     display: grid;
+//     button{
+//         justify-self: end;
+//         position: relative;
+//         right: 13rem;
+//     }
+// }
+.statusContent {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+    justify-items: center;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-items: left;
+    height: 6rem;
+    gap: 2rem;
+}

@@ -1,0 +1,78 @@
+section {
+
+  display :grid;
+}
+h2{
+  text-align: center;
+}
+input {
+  font-size: 16px;
+}
+.main-content {
+  min-width: 100vw;
+  }
+  .table {
+      padding: 5px;
+      width: 100%;
+      background: #fff;
+      max-height: 70vh;
+      overflow: auto;
+    
+      .search {
+        width: 100%;
+        max-width: 300px;
+      }
+    
+  
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 1.8rem;
+        max-height: 70vh;
+        overflow: auto;
+        color: black;
+        thead {
+          border-top: 2px solid var(--light-blue);
+          border-bottom: 2px solid var(--light-blue);
+        }
+    
+        th {
+          border: 1px solid #eee;
+        }
+    
+        th,
+        td {
+          vertical-align: baseline;;
+          text-align: center;
+          padding: 8px;
+          &.icons {
+            > * {
+              margin-right: 5px;
+              cursor: pointer;
+            }
+          }
+        }
+    
+        tr {
+          border-bottom: 1px solid #ccc;
+        }
+    
+        tr:nth-child(even) {
+          background-color: #eee;
+        }
+    
+      }
+    }
+
+    button {
+      width: 16rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-size: 2rem;
+    }
+
+    .uploader {
+      width:80vw;
+      display: grid;
+      justify-content: end;
+    }

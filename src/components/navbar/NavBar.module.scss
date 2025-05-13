@@ -1,0 +1,68 @@
+.navbar {
+  border-right: 1px solid #ccc;
+  min-height: 82.4vh;
+
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem;
+    background-color: #77665b;
+
+    h4 {
+      color: #fff;
+    }
+  }
+
+  nav ul {
+    li {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem;
+      position: relative;
+      background: #fff;
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.active {
+  cursor: pointer;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: orangered;
+}
+
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fab:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}

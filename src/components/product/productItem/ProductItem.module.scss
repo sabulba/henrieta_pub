@@ -1,0 +1,136 @@
+.content {
+  display: grid;
+  grid-template-rows: 34% 35% 2% auto;
+  justify-items: center;
+  padding: 1rem;
+  box-shadow: rgba(153, 146, 145, 0.8) 3px 2px;
+  border-radius: 10px;
+  text-align: center;
+  background: #251f1f;
+  min-width: 20rem;
+  height: 27rem;
+
+  @media screen and (max-width: 800px) {
+    max-height: 23rem;
+    min-height: 23rem;
+    width: 30rem;
+    grid-template-rows: 22% 42% 14% auto;
+  }
+
+  .productQuantity {
+    bottom: -5rem;
+    left: 5.6rem;
+    position: relative;
+    font-size: 1.2rem;
+    background: orangered;
+    border-radius: 50%;
+    padding: 1rem;
+    width: 2rem;
+    text-align: center;
+    line-height: 0.2rem;
+    grid-row: 4;
+    position: relative;
+    height: 2rem;
+
+    @media screen and (max-width: 800px) {
+      height: 2.5rem;
+      width: 2.5rem;
+      line-height: 2.7rem;
+      font-size: 1.6rem;
+      padding: 0rem;
+      top: 2.6rem;
+      left: 8.7rem;
+    }
+  }
+}
+
+.cardLogo {
+  position: relative;
+  bottom: 5rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+
+  @media screen and (max-width: 800px) {
+    max-width: 31rem;
+    position: relative;
+    bottom: 6rem;
+    left: 0;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+.details {
+  justify-items: center;
+  padding: 0 1rem;
+
+  h4 {
+    font-weight: 400;
+    font-size: 3rem;
+    direction: rtl;
+    color: #ebe5e5;
+
+    max-width: 200px;
+    /* Set your desired max width */
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    overflow: hidden;
+    /* Hides overflow text */
+    text-overflow: ellipsis;
+    /* Adds "..." to truncated text */
+    display: block;
+    /* Ensures it's a block element */
+  }
+
+  p {
+
+    font-weight: 500;
+    color: #ebe5e5;
+    direction: rtl;
+  }
+}
+
+.desc {
+  font-weight: 500;
+  font-size: 14px;
+  color: #ebe5e5;
+  direction: rtl;
+}
+
+.btnProduct {
+  height: 4rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 80% 20%;
+  width: 58%;
+  padding: 0;
+  background-color: #77665b;
+  color: #eadfdf;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 3rem;
+  font-weight: 700;
+
+  @media screen and (max-width: 800px) {
+    top: 0rem;
+  }
+
+  b {
+    opacity: 1;
+    position: relative;
+    top: -5.3rem;
+
+  }
+
+  span {
+    grid-column: 1 / -1;
+    align-self: center;
+    grid-row: 1 / -1;
+    height: 3rem;
+    line-height: 2rem;
+  }
+}

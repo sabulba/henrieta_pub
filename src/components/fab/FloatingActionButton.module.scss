@@ -1,0 +1,34 @@
+/* FloatingActionButton.module.scss */
+
+.rotated {
+    transform: rotate(45deg); /* Rotate the icon when FAB is open */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the rotation */
+  }
+  
+  .filterContainer {
+    position: absolute;
+    height: 32rem;
+    bottom: 12rem;
+    right: 1rem;
+    background: #5c5b5b;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards; /* Fade-in effect */
+    @media screen and (max-width:1000px) {
+      right: 47%;
+
+
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
