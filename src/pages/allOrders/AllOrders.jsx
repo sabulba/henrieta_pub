@@ -38,7 +38,7 @@ const AllOrders = () => {
   const userEmail = useSelector(selectEmail) || JSON.parse(localStorage.getItem('currentUser')).email;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isAdmin =  userEmail === "barnushi@gmail.com" || userEmail === "lazerashdot@gmail.com";
+  const isAdmin =  userEmail === "barnushi@gmail.com" || userEmail === "eliavhilu@gmail.com";
   const gridContainerStyle = {position:'relative' , right:'20%'}
   const handleClick = (id) => {
     navigate(`/orders/${id}`);
@@ -102,7 +102,7 @@ const AllOrders = () => {
       }));
       if (
         userEmail === "barnushi@gmail.com" ||
-        userEmail === "lazerashdot@gmail.com"
+        userEmail === "eliavhilu@gmail.com"
       ) {
         const extendedOrders = await extendOrdersWithUserDetails(fetchedOrders);
         localStorage.setItem('orders',JSON.stringify(extendedOrders));

@@ -69,7 +69,7 @@ const Cart = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
   const isAdmin =
     currentUser.email === "barnushi@gmail.com" ||
-    currentUser.email === "lazerashdot@gmail.com";
+    currentUser.email === "eliavhilu@gmail.com";
   useEffect(() => {
     dispatch(CALCULATE_SUBTOTAL());
     dispatch(CALCULATE_TOTAL_QUANTITY());

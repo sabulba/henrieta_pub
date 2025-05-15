@@ -10,7 +10,7 @@ import OrderHistory from "./pages/orederHistory/OrderHistory";
 import OrderDetails from "./pages/orederHistory/OrderDetails";
 import Users from "./pages/users/Users";
 import About from "./pages/about/About";
-import PhoneAuth from "./pages/phoneAuth/PhoneAuth";
+import RequireAuth from "./pages/auth/RequireAuth";
 
 
 function App() {
@@ -21,7 +21,8 @@ function App() {
         <ToastContainer />
         <Routes>
           
-          <Route path="/" element={<Home />} />
+          <Route path="/" 
+                 element={<RequireAuth><Home /></RequireAuth>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
 
