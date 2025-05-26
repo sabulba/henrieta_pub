@@ -20,7 +20,8 @@ const categories = [
   { id: 1, name: 'משקאות חריפים' },
   { id: 2, name: 'משקאות קלים' },
   { id: 3, name: 'מאכלים' },
-  { id: 4, name: 'אחר' },
+  { id: 4, name: 'בירה' },
+  { id: 5, name: 'אחר' },
 ];
 
 const initialState = {

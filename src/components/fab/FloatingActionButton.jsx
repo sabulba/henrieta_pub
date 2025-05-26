@@ -32,8 +32,7 @@ const FloatingActionButton = ({ children , isOpen, toggleFilters }) => {
   return (
     <div style={{ position: "relative" }}>
       <Fab
-      
-        mainButtonStyles={{ backgroundColor: "#007bff", color: "white" ,background:"black",top: "3rem" ,right:(20)+'px'}}
+        mainButtonStyles={{ backgroundColor: "#007bff", color: "white" ,background:"black",top: "3rem" ,right:(window.screen.width - 120)+'px'}}
         icon={<FaFilter />}
         alwaysShowTitle={false}
         onClick={toggleFilters }

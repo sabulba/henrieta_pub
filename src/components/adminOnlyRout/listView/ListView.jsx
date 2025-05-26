@@ -25,7 +25,7 @@ const ListView = ({ data, onRefreshOrders }) => {
 
   const userEmail = useSelector(selectEmail);
   const isAdmin =
-    userEmail === "barnushi@gmail.com" || userEmail === "eliavhilu@gmail.com";
+    userEmail === "barnushi@gmail.com" || userEmail === "eliavhilu@gmail.com" || 'h.szold23@gmail.com';
 
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth);

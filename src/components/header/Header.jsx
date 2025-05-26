@@ -230,11 +230,11 @@ const Header = () => {
                 </div>
                 <div className={styles.avatar}>
                   <a href="#home" style={{ color: "#ff7722" }}>
-                    <img
+                    {currentUser && <img
                       src={currentUser && currentUser?.photoURL ? currentUser?.photoURL : ""}
                       alt=""
                       referrerpolicy="no-referrer"
-                    />
+                    />}
                   </a>
                   <p> Hi, {displayName}</p>
                 </div>

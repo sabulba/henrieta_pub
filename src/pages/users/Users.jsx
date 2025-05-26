@@ -76,7 +76,8 @@ const Users = () => {
   // Fetch accounts from Firebase
   const fetchAccounts = async () => {
     const accountsCollection = collection(db, "accounts");
-    const querySnapshot = await getDocs(accountsCollection);
+    const q = query(accountsCollection, orderBy("firstName", "asc"));
+    const querySnapshot = await getDocs(q);
     const fetchedAccounts = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -299,15 +300,10 @@ const Users = () => {
                           {accountNumber}
                         </td>
                         <td>
-                          <div
-                            style={{
-                              display: "grid",
-                              gridTemplateColumns: "1fr 1fr 1fr",
-                              gap: "1rem",
-                            }}
-                          >
+                          <div className={styles.actions} >
                             <button
                               style={{
+                                fontSize:'12px',
                                 background:
                                   status === "confirmed"
                                     ? "light-green"
@@ -318,12 +314,14 @@ const Users = () => {
                               {status === "confirmed" ? "מאושר" : "...בהמתנה"}
                             </button>
                             <button
+                            style={{fontSize:'12px'}}
                               className="--btn-primary"
                               onClick={() => updateUserState(id, "Pending")}
                             >
                               חסימת לקוח.ה
                             </button>
                             <button
+                            style={{fontSize:'12px'}}
                               className="--btn-purple"
                               onClick={() => openDialog(user)}
                             >
@@ -337,13 +335,7 @@ const Users = () => {
                             alignItems: "center",
                             justifyItems: "center",
                             height: "8rem",
-                          }}
-                        >
-                          <FaInfoCircle
-                            style={{ cursor: "pointer" }}
-                            color="green"
-                            size={20}
-                          />
+                          }} >
                         </td>
                       </tr>
                     );

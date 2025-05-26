@@ -7,7 +7,7 @@ const initialState = {
     : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
-  previousUrl:''
+  previousUrl: "",
 };
 
 const cartSlice = createSlice({
@@ -37,23 +37,27 @@ const cartSlice = createSlice({
       const productIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );
-      if (state.cartItems[productIndex].cartQuantity > 1) {
-        //decrease in 1
-        state.cartItems[productIndex].cartQuantity -= 1;
-        toast.success(`${action.payload.name} added to cart`, {
-          position: "bottom-left",
-          autoClose: 1000,
-        });
-      } else if (state.cartItems[productIndex].cartQuantity === 1) {
-        //remove from items
-        const newCartItem = state.cartItems.filter(
-          (item) => item.id !== action.payload.id
-        );
-        state.cartItems = newCartItem;
-       
+
+      if (productIndex !== -1) {
+        if (state.cartItems[productIndex].cartQuantity > 1) {
+          // decrease by 1
+          state.cartItems[productIndex].cartQuantity -= 1;
+          // toast.success(`${action.payload.name} quantity decreased`, {
+          //   position: "bottom-left",
+          //   autoClose: 1000,
+          // });
+        } else if (state.cartItems[productIndex].cartQuantity === 1) {
+          // remove item
+          const newCartItem = state.cartItems.filter(
+            (item) => item.id !== action.payload.id
+          );
+          state.cartItems = newCartItem;
+          // toast.info(`${action.payload.name} removed from cart`, {
+          //   position: "bottom-left",
+          //   autoClose: 1000,
+          // });
+        }
       }
-      // save cart to LS
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     REMOVE_FROM_CART(state, action) {
       const newCartItem = state.cartItems.filter(
@@ -66,38 +70,49 @@ const cartSlice = createSlice({
       });
       // save cart to LS
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-    }, 
+    },
     CLEAR_CART(state, action) {
       state.cartItems = [];
       // save cart to LS
-      localStorage.setItem("cartItems", '');
+      localStorage.setItem("cartItems", "");
     },
     CALCULATE_SUBTOTAL(state, action) {
-        const array =[];
-        state.cartItems.map((item)=>{
-            const {price , cartQuantity}= item;
-            const cartItemAmount =cartQuantity*price;
-            return array.push(cartItemAmount);
-        });
-        const totalAmount = array.reduce((a,b)=>{return a+b},0);
-        state.cartTotalAmount = totalAmount;
+      const array = [];
+      state.cartItems.map((item) => {
+        const { price, cartQuantity } = item;
+        const cartItemAmount = cartQuantity * price;
+        return array.push(cartItemAmount);
+      });
+      const totalAmount = array.reduce((a, b) => {
+        return a + b;
+      }, 0);
+      state.cartTotalAmount = totalAmount;
     },
     CALCULATE_TOTAL_QUANTITY(state, action) {
-        const array =[];
-        state.cartItems.map((item)=>{
-            return array.push(item.cartQuantity);
-        });
-        const totalQuantity = array.reduce((a,b)=>{return a+b},0);
-        state.cartTotalQuantity = totalQuantity;
+      const array = [];
+      state.cartItems.map((item) => {
+        return array.push(item.cartQuantity);
+      });
+      const totalQuantity = array.reduce((a, b) => {
+        return a + b;
+      }, 0);
+      state.cartTotalQuantity = totalQuantity;
     },
     SAVE_URL(state, action) {
       state.previousUrl = action.payload;
-    }
+    },
   },
 });
 
-export const { ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART,CLEAR_CART,
-              CALCULATE_SUBTOTAL , CALCULATE_TOTAL_QUANTITY,SAVE_URL } = cartSlice.actions;
+export const {
+  ADD_TO_CART,
+  DECREASE_CART,
+  REMOVE_FROM_CART,
+  CLEAR_CART,
+  CALCULATE_SUBTOTAL,
+  CALCULATE_TOTAL_QUANTITY,
+  SAVE_URL,
+} = cartSlice.actions;
 export const selectCartItems = (state) => state.cart.cartItems;
 export const selectCartTotalQuantity = (state) => state.cart.cartTotalQuantity;
 export const selectCartTotalAmount = (state) => state.cart.cartTotalAmount;

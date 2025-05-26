@@ -69,7 +69,7 @@ const Cart = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
   const isAdmin =
     currentUser.email === "barnushi@gmail.com" ||
-    currentUser.email === "eliavhilu@gmail.com";
+    currentUser.email === "eliavhilu@gmail.com" || 'h.szold23@gmail.com';
   useEffect(() => {
     dispatch(CALCULATE_SUBTOTAL());
     dispatch(CALCULATE_TOTAL_QUANTITY());
@@ -106,6 +106,7 @@ const Cart = () => {
       setSelectedOrder(orderData);
       addDoc(collection(db, "orders"), orderData);
       setIsLoading(false);
+      clearCart();
       isMobile ? successMessage() : navToOrders();
     } catch (error) {
       setIsLoading(false);
@@ -323,7 +324,7 @@ const Cart = () => {
               <div className={styles.payment}>
                 {isAdmin && (
                   <div>
-                    <h1>חיוב ידני</h1>
+                    <h4>חיוב חברים</h4>
                  
                       <Autocomplete   
                       options={users}
@@ -351,7 +352,6 @@ const Cart = () => {
                         renderInput={(params) => (
                           <TextField
                             {...params}
-                            label="חיפוש חבר - מספר חשבון"
                             InputProps={{
                               ...params.InputProps,
                               endAdornment: (
@@ -361,6 +361,7 @@ const Cart = () => {
                                     justifyContent: "flex-end", // move to left
                                     alignItems: "center",
                                     width: "max-content",
+                                    background: "white"
                                   }}
                                 >
                                   {/* Only show clear button (params.InputProps.endAdornment includes clear + arrow) */}
@@ -373,12 +374,14 @@ const Cart = () => {
                               style: {
                                 direction: "rtl",
                                 fontSize: "2rem",
+                                   background:"white"
                               },
                             }}
                             InputLabelProps={{
                               style: {
                                 direction: "rtl",
                                 fontSize: "2rem",
+                             
                               },
                             }}
                           />

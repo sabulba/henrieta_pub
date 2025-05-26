@@ -45,7 +45,7 @@ const Home = () => {
       }));
       if (
         userEmail === "barnushi@gmail.com" ||
-        userEmail === "eliavhilu@gmail.com"
+        userEmail === "eliavhilu@gmail.com" || 'h.szold23@gmail.com'
       ) {
         setOrders(fetchedOrders);
       } else {

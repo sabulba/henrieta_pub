@@ -1,25 +1,29 @@
-.contentLayout{
+.contentLayout {
   display: grid;
   grid-template-columns: 85% 15%;
   width: 70vw;
-  
+  margin: 2rem auto;
   .actionButtons {
     display: grid;
     grid-template-rows: 6rem 6rem 6rem 1fr;
     justify-items: center;
+
     button {
       width: 17rem;
     }
-    .monthFilter{
+
+    .monthFilter {
       width: 17rem;
-      padding:0.5rem;
-      border-radius:5px;
-      color:#000;
+      padding: 0.5rem;
+      border-radius: 5px;
+      color: #000;
     }
+
     @media screen and (max-width: 1000px) {
-     // display: none;
+      // display: none;
     }
   }
+
   //LAPTOP
   @media screen and (max-width: 1400px) {
     margin-left: 0;
@@ -27,173 +31,202 @@
     max-height: 72vh;
     overflow: scroll;
   }
+
   // IPAD MINI
   @media screen and (max-width: 1100px) {
     grid-template-columns: 100%;
     width: 100vw;
   }
+
   // MOBILE
   @media screen and (max-width: 800px) {
     grid-template-columns: 100%;
     width: 100vw;
+    height: 70vh;
   }
 }
+
 .gridLayout {
-      display: grid;
-      gap: 4px;
-      margin: 0px 1rem;
-      direction: rtl;
-      display: grid;
-      justify-items: center;
-      grid-template-columns: repeat(4,1fr);
-      // max-height: 76vh;
-      // min-height: 76vh;
-      // overflow: scroll;
-      @media screen and (max-width: 800px) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 4rem;
-        max-height: 70vh;
-      }
-      @media screen and (min-width: 1000px ){
-        grid-template-columns: repeat(3, 1fr);
-        height: 74vh;
-        gap: 4rem;
-      }
+  display: grid;
+  gap: 4px;
+  margin: 0px 1rem;
+  direction: rtl;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  max-height: 76vh;
+  min-height: 76vh;
+  overflow: scroll;
+
+  // max-height: 76vh;
+  // min-height: 76vh;
+  // overflow: scroll;
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+    max-height: 70vh;
   }
+
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 80vh;
+    height: 74vh;
+    gap: 4rem;
+  }
+}
+
 .flipCard {
-    width: 300px;
-    height: 300px;
-    perspective: 1000px; /* 3D effect */
-    cursor: pointer;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  /* 3D effect */
+  cursor: pointer;
 
-  }
-  
-  .flipCardInner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
- 
-  }
-  
-  .flipCardFlipped .flipCardInner {
-    transform: rotateY(180deg);
-  }
-  .flipCardFront{
-    background: transparent;
-  }
+}
 
-  .flipCardFront,
-  .flipCardBack {
-    position: absolute;
-    width: 300px;
-    height: 300px;
+.flipCardInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 
-    backface-visibility: hidden;
-  }
-  
-  .flipCardBack {
-    transform: rotateY(180deg);
-  }
-  .listItems{
-    padding: 2rem;
-    max-height: 18rem;
-    min-height: 18rem;
+}
+
+.flipCardFlipped .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+.flipCardFront {
+  background: transparent;
+}
+
+.flipCardFront,
+.flipCardBack {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+
+  backface-visibility: hidden;
+}
+
+.flipCardBack {
+  transform: rotateY(180deg);
+}
+
+.listItems {
+  padding: 2rem;
+  max-height: 18rem;
+  min-height: 18rem;
+  overflow: scroll;
+
+  b {
+    font-size: 2.3rem;
+    text-align: right;
+    max-height: 5rem;
     overflow: scroll;
-    b{
-      font-size:2.3rem;
-      text-align:right;
-      max-height:5rem;
-      overflow:scroll;
-    }
   }
+}
 
-  h1,h4 {
-    text-align: center;
-  }
+h1,
+h4 {
+  text-align: center;
+  width: 100%;
+}
 
-  .innerCard {
-    display: grid;
-        grid-template-rows: 17% 54% 14%;
-        align-items: center;
-        border: 1rem solid #2f2d2d;
-        border-radius: 24px;
-    .title {
-      display: grid;
-          grid-auto-flow: column;
-          justify-items: center;
-          background: #2f2d2d;
-          
-          height: 5rem;
-          h1{
-            font-size: 4rem;
-            color: #fff;
-          }
-          img {
-            width: 57px;
-            height: 40px;
-          }
-    }
-    h3 {
-      font-weight: 700;
-      color: #000;
-    }
-  }
-  .actions {
+.innerCard {
+  display: grid;
+  grid-template-rows: 17% 54% 14%;
+  align-items: center;
+  border: 1rem solid #2f2d2d;
+  border-radius: 24px;
+
+  .title {
     display: grid;
     grid-auto-flow: column;
-    gap: 1rem;
-    text-align: center;
-  }
-  .listContent{
-    margin: 0 2rem; 
-    direction: rtl;
-    .listItems {
-      padding: 0rem 2rem;
-      max-height: 16rem;
-      min-height: 16rem;
-      overflow: scroll;
+    justify-items: center;
+    background: #2f2d2d;
+
+    height: 5rem;
+
+    h1 {
+      font-size: 4rem;
+      color: #fff;
+    }
+
+    img {
+      width: 57px;
+      height: 40px;
     }
   }
 
-  .amount {
-    width: 100%; text-align: center;
-  }
-  .productStatus {
-    color:#fff;
-    width: 66%;
-    justify-self: center;
-    border-radius: 10%;
-    text-align: center;
-  }
-  .fabTitle {
-    position: fixed;
-    bottom: 0rem;
-    left: 0;
-    font-size: 1.5rem;
-    width: 9.3rem;
-    background: #000;
-    color: #fff;
-    text-align: left;
-    margin-left: 0.4%;
-    padding: 0px 8px;
-  }
-  .badge {
-    font-size: 2.5rem;
-    width: 4rem;
-    height: 4rem;
-    background: #2f2d2d;
-    border-radius: 50%;
-    grid-row: 4;
-    align-self: start;
-    position: absolute;
-    left: 13rem;
-    bottom: -3rem;
-  }
-  .status {
-    width: 80%;
-    margin: auto;
-    border-radius: 14px;
-    margin-bottom: 1rem;
+  h3 {
+    font-weight: 700;
     color: #000;
   }
+}
+
+.actions {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.listContent {
+  margin: 0 2rem;
+  direction: rtl;
+
+  .listItems {
+    padding: 0rem 2rem;
+    max-height: 16rem;
+    min-height: 16rem;
+    overflow: scroll;
+  }
+}
+
+.amount {
+  width: 100%;
+  text-align: center;
+}
+
+.productStatus {
+  color: #fff;
+  width: 66%;
+  justify-self: center;
+  border-radius: 10%;
+  text-align: center;
+}
+
+.fabTitle {
+  position: fixed;
+  bottom: 0rem;
+  left: 0;
+  font-size: 1.5rem;
+  width: 9.3rem;
+  background: #000;
+  color: #fff;
+  text-align: left;
+  margin-left: 0.4%;
+  padding: 0px 8px;
+}
+
+.badge {
+  font-size: 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  background: #2f2d2d;
+  border-radius: 50%;
+  grid-row: 4;
+  align-self: start;
+  position: absolute;
+  left: 13rem;
+  bottom: -3rem;
+}
+
+.status {
+  width: 80%;
+  margin: auto;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  color: #000;
+}

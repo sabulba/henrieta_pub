@@ -35,7 +35,7 @@ const OrderHistory = () => {
     useSelector(selectEmail) || JSON.parse(localStorage.getItem("currentUser")).email;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isAdmin = ["barnushi@gmail.com", "eliavhilu@gmail.com"].includes(userEmail);
+  const isAdmin = ["barnushi@gmail.com", "eliavhilu@gmail.com", 'h.szold23@gmail.com'].includes(userEmail);
 
   const handleClick = (id) => navigate(`/orders/${id}`);
 
@@ -58,7 +58,7 @@ const OrderHistory = () => {
       setIsLoading(true);
       const currentUser = JSON.parse(localStorage.getItem("currentUser"));
       const userEmail = currentUser?.email;
-      const isAdmin = ["barnushi@gmail.com", "eliavhilu@gmail.com"].includes(userEmail);
+      const isAdmin = ["barnushi@gmail.com", "eliavhilu@gmail.com", 'h.szold23@gmail.com'].includes(userEmail);
       const ordersRef = collection(db, "orders");
 
       let q = isAdmin
@@ -151,7 +151,7 @@ const OrderHistory = () => {
 
   const setOrdersMessagesNotifyer = () => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const isAdmin = ["barnushi@gmail.com", "eliavhilu@gmail.com"].includes(currentUser?.email);
+    const isAdmin = ["barnushi@gmail.com", "eliavhilu@gmail.com", 'h.szold23@gmail.com'].includes(currentUser?.email);
     const collectionRef = query(collection(db, "orders"), orderBy("date", "desc"));
 
     const unsubscribe = onSnapshot(
@@ -187,8 +187,8 @@ const OrderHistory = () => {
         />
       ) : isListView ? (
         <div className={styles.mobileLayout}>
-          <h1 style={{ textAlign: "center", color: "#fff", background: "#554949" }}>הזמנות</h1>
-          <ListView data={orders} onRefreshOrders={getOrders} />
+          <h1 style={{ textAlign: "center", color: "#fff", background: "#554949" ,width:"100vw" , margin:"auto"}}>הזמנות</h1>
+          <ListView data={orders} onRefreshOrders={getOrders} style={{marginTop:'2rem'}} />
         </div>
       ) : (
         <div
