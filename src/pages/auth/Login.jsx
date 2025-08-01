@@ -59,8 +59,7 @@ const Login = () => {
       saveUserToDB({
         id: currentUser?.uid ?? currentUser?.id,
         accountNumber: currentUser?.accountNumber ?? "",
-        createdAt:
-          currentUser?.createdAt ?? new Date().toISOString().slice(0, 10),
+        createdAt:  currentUser?.createdAt ?? new Date().toISOString().slice(0, 10),
         email: currentUser?.email,
         cellular: cellular ?? "",
         firstName: firstName ?? "",
@@ -139,8 +138,7 @@ const Login = () => {
         addUser({
           id: selectedUser?.uid ?? selectedUser?.id,
           accountNumber: selectedUser?.accountNumber ?? "",
-          createdAt:
-            selectedUser?.createdAt ?? new Date().toISOString().slice(0, 10),
+          createdAt:  selectedUser?.createdAt ?? new Date().toISOString().slice(0, 10),
           email: selectedUser?.email,
           cellular: cellular || selectedUser.cellular,
           firstName: firstName  || selectedUser.firstName,

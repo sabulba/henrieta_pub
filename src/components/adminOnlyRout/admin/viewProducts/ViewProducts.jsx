@@ -105,7 +105,7 @@ const ViewProducts = () => {
             <div className={styles.tableTitle}
             style={{display:'grid' , gridTemplateColumns:' 5% 23% 23% 23% 12% 10%'  , justifyItems:'end',
                          background:'#fff' , borderRadius:'15px' , direction:'rtl',
-                         padding:'1rem',margin:'0 1rem', margin:'auto' , color:'black'}}>
+                         padding:'1rem', margin:'auto' , color:'black'}}>
               <div>#</div>
               <div>תמונה</div>
               <div>מוצר</div>

@@ -10,12 +10,17 @@ import {
   FaEllipsisH,
 } from "react-icons/fa";
 import { RiBeerFill} from "react-icons/ri";
+
 const categoryIcons = [
   { name: 'בירה', src: 'images/categories/beer.png'},
-  { name: 'משקאות חריפים', src: 'images/categories/wisky.png' },
+  { name: 'משקאות חריפים', src: 'images/categories/alcoholic.png' },
+  { name: 'Whisky', src: 'images/categories/wisky.png' },
   { name: 'משקאות קלים', src: 'images/categories/soft-drink.png' },
   { name: 'מאכלים', src: 'images/categories/food.png' },
-  { name: 'כל המוצרים', src: 'images/categories/all_products.png' }
+  { name: 'כל המוצרים', src: 'images/categories/all_products.png' },
+  { name: "צ'ייסרים",src: 'images/categories/chasers.png' },
+  { name: 'מעורבבים', src: 'images/categories/mixed.png' },
+  { name: 'יין', src: 'images/categories/wine.png' },
 ];
 
 

@@ -12,6 +12,8 @@ h1 {
     min-width: 20rem;
       @media (max-width: 768px) {
            margin-left: 2rem;
+           max-height: 47vh;
+           overflow: auto;
         }
 }
 
@@ -27,7 +29,7 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     transition: background 0.2s;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #2e2c2c;
 }
 

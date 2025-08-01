@@ -21,7 +21,11 @@ const categories = [
   { id: 2, name: 'משקאות קלים' },
   { id: 3, name: 'מאכלים' },
   { id: 4, name: 'בירה' },
-  { id: 5, name: 'אחר' },
+  { Id: 5, name: "צ'ייסרים" },
+  { Id: 6, name: 'מעורבבים' },
+  { Id: 7, name:  'יין' },
+  { Id: 8, name:  'ויסקי' },
+  { id: 9, name: 'אחר' },
 ];
 
 const initialState = {
